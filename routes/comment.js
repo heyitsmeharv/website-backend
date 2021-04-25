@@ -3,7 +3,7 @@ let Comment = require('../models/comment.model');
 
 router.route('/').get((req, res) => {
   Comment.find()
-    .then(comment => res.json(comment))
+    .then(comments => res.json(comments))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -25,7 +25,7 @@ router.route('/add').post((req, res) => {
 
 router.route('/:id').get((req, res) => {
   Comment.findById(req.params.id)
-    .then(comment => res.json(comment))
+    .then(comments => res.json(comments))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
