@@ -18,9 +18,9 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 });
 
-const commentsRouter = require('./routes/comment');
+const commentsRouter = require('./routes/comments');
 
-app.use('/comment', commentsRouter);
+app.use('/comments', commentsRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
