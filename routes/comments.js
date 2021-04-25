@@ -2,8 +2,6 @@ const router = require('express').Router();
 let Comment = require('../models/comment.model');
 
 router.route('/').get((req, res) => {
-  console.log('hi', res, req);
-  console.log(Comment);
   Comment.find()
     .then(comments => res.json(comments))
     .catch(err => res.status(400).json('Error: ' + err));
