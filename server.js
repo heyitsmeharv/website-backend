@@ -19,8 +19,10 @@ connection.once('open', () => {
 });
 
 const commentsRouter = require('./routes/comments');
+const emailRouter = require('./routes/email');
 
 app.use('/comments', commentsRouter);
+app.use('/email', emailRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
