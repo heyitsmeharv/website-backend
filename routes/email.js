@@ -21,8 +21,8 @@ router.route('/send').post((req, res) => {
   const mailOptions = {
     from: email,
     to: 'heyitsmeharv@gmail.com',
-    subject: 'Test',
-    text: message
+    subject: name,
+    text: `${message} - ${company} - ${telephone}`
   }
 
   transporter.sendMail(mailOptions, function (error, data) {
