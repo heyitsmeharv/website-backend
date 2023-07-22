@@ -16,6 +16,9 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
+  app.listen(port, () => {
+    console.log(`Server is running on port: ${port}`);
+  });
 });
 
 const commentsRouter = require('./routes/comments');
@@ -25,8 +28,3 @@ const likeCountRouter = require('./routes/likeCount');
 app.use('/comments', commentsRouter);
 app.use('/email', emailRouter);
 app.use('/likeCount', likeCountRouter);
-
-
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
